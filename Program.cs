@@ -1,40 +1,58 @@
 ﻿class Program
 {
-       static void Main(string[] args)
+    static void Main(string[] args)
     {
-        // lista obiektó typu pojazd
-        // przynajmniej 1 osobowy 1 ciezarowy
+        List<Pojazd> pojazdy = new List<Pojazd>();
+
+        pojazdy.Add(new SamochodOsobowy("Toyota", "Corolla", 2020, "4"));
+        
         // foreach przechodzi po liście i wyświetla dane z metody WyswietlInfomracje() dla danego pojazdu
+        foreach (Pojazd element in pojazdy)
+        {
+            Console.WriteLine(element.WyswietlInformacje());
+        }
     }
 }
 class Pojazd
 {
-    static void Main(string[] args)
-    {
-
-    }
     private string marka;
     private string model;
     private int rokProdukcji;
 
     public Pojazd(string marka, string model, int rokProdukcji)
     {
-        this.marka = "";
-        this.model = "";
-        this.rokProdukcji = 0;
+        this.marka = marka;
+        this.model = model;
+        this.rokProdukcji = rokProdukcji;
+    }
+
+    public virtual string WyswietlInformacje()
+    {
+        return $"Marka: {marka}, Model: {model}, Rok produkcji: {rokProdukcji}";
     }
 }
 
 class SamochodOsobowy : Pojazd
 {
     private string lizbaDrzwi;
+    
     // wywołanie konstruktora klasy bazowej Pojazd
-    // podanie danych do WyswietlInfomracje()
-}
+    public SamochodOsobowy(string marka, string model, int rokProdukcji, string liczbaDrzwi) : base(marka, model, rokProdukcji)
+    {
+        this.lizbaDrzwi = liczbaDrzwi;
+    }
 
+    // podanie danych do WyswietlInfomracje()
+    public override string WyswietlInformacje()
+    {
+        return base.WyswietlInformacje() + $", Liczba drzwi: {lizbaDrzwi}";
+    }
+}
+/*
 class Ciezarowka : Pojazd
 {
     private string ladownoscTon;
     // wywołanie konstruktora klasy bazowej Pojazd
+
     // podanie danych do WyswietlInfomracje()
-}
+}*/
