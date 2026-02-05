@@ -51,7 +51,7 @@ class SamochodOsobowy : Pojazd
     // podanie danych do WyswietlInfomracje()
     public override string WyswietlInformacje()
     {
-        return base.WyswietlInformacje() + $", Liczba drzwi: {lizbaDrzwi}";
+        return "Samochód osobowy: " + base.WyswietlInformacje() + $", Liczba drzwi: {lizbaDrzwi}";
     }
 }
 
@@ -67,6 +67,6 @@ class Ciezarowka : Pojazd
     // podanie danych do WyswietlInfomracje()
     public override string WyswietlInformacje()
     {
-        return base.WyswietlInformacje() + $", Ładowność: {ladownoscTon} ton";
+        return "Ciężarówka: "+ base.WyswietlInformacje() + $", Ładowność: {ladownoscTon} ton";
     }
 }
