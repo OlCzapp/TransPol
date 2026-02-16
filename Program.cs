@@ -17,7 +17,7 @@ class Program
         // foreach przechodzi po liście i wyświetla dane z metody WyswietlInfomracje() dla danego pojazdu
         foreach (Pojazdy element in pojazdy) // dla każdego (parametr kolejny_element_listy w Nazwa_listy)
         {
-            Console.WriteLine(element.WyswietlInformacje()); 
+            Console.WriteLine(element.WyswietlInformacje()); // element.WyswwietlInformacje() - do elementu listy przypisz informacje 
         }
     }
 }
